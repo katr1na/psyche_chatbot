@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <style>
+      body {
+        opacity: 0;
+        transition: opacity 3s;
+        font-family: 'Gowun Dodum', sans-serif;
+        background-color: #5e8adc
+      }
+
+      .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 10%;
+        border-radius: 50%;
+      }
+      
+      .container {
+        display: grid;
+        grid-template-columns: 40% 40%;
+        grid-column-gap: 20%;
+        padding:5% 10%;
+      }
+      
+      .item {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        border-radius: 10%;
+        padding: 20px;
+        text-align: center;
+      }
+
+
+    </style>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+    <img src="logo.PNG" alt="psyche logo" class="center">
+    <h1 style="text-align:center">Welcome to Psyche</h1>
+    <div class="container"> 
+      <div class="item">
+        <h2 style="font-size:35px">What is Psyche?</h2>
+        <p>Psyche is a Machine Learning based Chatbot created using IBM Watson Assistant. It is designed to guide users to figure out what problems they would like to solve in their lives. From this, Psyche helps them create a daily routine and milestones. Whenever users finish their milestones or struggle with their milestones, Psyche can help them reflect on their old milestones and create new ones. To start, click the chat button in the bottom right.</p>
+      </div>
+      <div class="item">
+        <h2 style="font-size:35px">Disclaimer</h2>
+        <p>While extensive research has been done in the creation of Psyche, it is important to remember that it is not meant to replace trained medical professionals or therapists. Psyche is designed to help people create basic routines to help with problem areas in their life. Everyone has unique needs and if a trained professional already has you doing certain routines, do not replace those with the routines provided by Psyche.</p>
+      </div>
+    </div>
+
+    <script>
+      window.watsonAssistantChatOptions = {
+        integrationID: "87945246-82d6-46c7-a716-019eabff3b25", // The ID of this integration.
+        region: "us-south", // The region your integration is hosted in.
+        serviceInstanceID: "c43d7f8d-a82f-4189-b0d9-551ff1ee2fd8", // The ID of your service instance.
+        carbonTheme: 'g90',
+        openChatByDefault: true,
+        hideCloseButton: false,
+        
+        onLoad: function(instance) { 
+          instance.updateCSSVariables({
+            'BASE-font-family': '"Gowun Dodum", sans-serif',
+          });
+          instance.render(); 
+          }
+      };
+
+      setTimeout(function(){
+        const t=document.createElement('script');
+        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+        document.head.appendChild(t);
+      });
+    </script>
+
+  </body>
+</html>
